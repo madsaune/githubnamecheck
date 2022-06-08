@@ -17,14 +17,14 @@ type HttpStatus struct {
 }
 
 func main() {
-	var path string
-	flag.StringVar(&path, "path", "./urls.txt", "path to urls.txt")
+	var filePath string
+	flag.StringVar(&filePath, "path", "./urls.txt", "path to urls.txt")
 	flag.Parse()
 
 	rand.Seed(time.Now().UnixNano())
 	var wg sync.WaitGroup
 
-	urls, err := getUrls(path)
+	urls, err := getUrls(filePath)
 	if err != nil {
 		log.Fatalf("could not get urls from file: %v", err)
 	}
