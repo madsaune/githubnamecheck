@@ -67,7 +67,7 @@ func ping(url string) (*HttpStatus, error) {
 func getUrls(path string) ([]string, error) {
 	var urls []string
 
-	f, err := os.Open("./urls.txt")
+	f, err := os.Open(path)
 	if err != nil {
 		return nil, err
 	}
